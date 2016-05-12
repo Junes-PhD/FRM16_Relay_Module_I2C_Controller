@@ -2,8 +2,7 @@
 #include <Wire.h>
 
 byte port = 0x12;      //Port A (0x12) Port B (0x13)
-byte address = 0x20;
-byte output = 0x00;
+byte address = 0x20;   //chip address based on the three address pins
 unsigned int count = 1;
 
 void setup()
@@ -62,6 +61,8 @@ void setup()
 void loop()
 {
  
+  //cycles through the relays
+  
   if (count > 128){
     count = 1; 
     address++;
@@ -69,12 +70,11 @@ void loop()
    
   Serial.println(address);
   Serial.println(port);
-  //Serial.println(output);
   Serial.println(count);
   Serial.println();
     
   Wire.beginTransmission(address);
-  Wire.write(port); // address port A
+  Wire.write(port); // Switches between port A & B 
   Wire.write(count);  // value to send
   Wire.endTransmission();
     
@@ -83,7 +83,7 @@ void loop()
   }
   else{
     port = 0x12;
-    count = count * 2;
+    count = count * 2; //bit shift
   }
 
   
