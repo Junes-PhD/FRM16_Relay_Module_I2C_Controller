@@ -1,0 +1,11 @@
+(module card_edge_3_conductor (layer F.Cu) (tedit 56E1AE2E)
+  (fp_text reference REF** (at 0 4.191) (layer F.SilkS)
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (fp_text value card_edge_3_conductor (at -0.127 -5.08) (layer F.Fab) hide
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (pad 3 thru_hole rect (at 5.08 0) (size 2.25 6) (drill 0.762) (layers *.Cu *.Mask F.SilkS))
+  (pad 2 thru_hole rect (at 0 0) (size 2.25 6) (drill 0.762) (layers *.Cu *.Mask F.SilkS))
+  (pad 1 thru_hole rect (at -5.08 0) (size 2.25 6) (drill 0.762) (layers *.Cu *.Mask F.SilkS))
+)
